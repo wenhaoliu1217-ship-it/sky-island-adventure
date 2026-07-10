@@ -21,7 +21,7 @@ Thumbs.db
 Desktop.ini
 
 # Binary artifacts
-!ø’µ∫√∞œ’.exe
+*.exe
 *.pdb
 *.ilk
 *.obj
