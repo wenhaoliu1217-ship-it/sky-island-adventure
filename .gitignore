@@ -1,0 +1,31 @@
+# Visual Studio
+.vs/
+*.suo
+*.sdf
+*.ipch
+*.db
+*.opendb
+*.VC.db
+*.VC.opendb
+
+# Build outputs
+Debug/
+Release/
+x64/
+x86/
+*/Debug/
+*/Release/
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Binary artifacts
+*.exe
+*.pdb
+*.ilk
+*.obj
+*.exe.lnk
+
+# Python helper scripts (temporary)
+fix_name.py
