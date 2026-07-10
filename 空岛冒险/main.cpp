@@ -288,7 +288,7 @@ int menu() {
 
 		BeginBatchDraw();
 		cleardevice();
-		peekmessage(&mouse, EM_MOUSE);
+		peekmessage(&mouse, EX_MOUSE);
 		putimage(x, 0, &bk);
 		putimage(x + 1500, 0, &bk);
 		if (!file_is && !state) {
@@ -298,7 +298,7 @@ int menu() {
 		x -= 0.3;
 		if (x <= -1500)//背景坐标重置
 			x = 0;
-		peekmessage(&mouse, EM_MOUSE);
+		peekmessage(&mouse, EX_MOUSE);
 
 		//按钮判定
 		if (!file_is && !state) {
@@ -1328,7 +1328,7 @@ int fight(player me, opponent rival, IMAGE bk, weapon handbag[]) {
 			Sleep(500);
 			while (1) {
 				test.lbutton = NULL;
-				peekmessage(&test, EM_MOUSE);//任意操作退回主界面
+				peekmessage(&test, EX_MOUSE);//任意操作退回主界面
 
 				if (test.lbutton) {
 					mciSendString(L"open ../背景音乐/装备.mp3 alias BGM", 0, 0, 0);
@@ -1347,7 +1347,7 @@ int fight(player me, opponent rival, IMAGE bk, weapon handbag[]) {
 			Sleep(500);
 			while (1) {
 				test.lbutton = NULL;
-				peekmessage(&test, EM_MOUSE);
+				peekmessage(&test, EX_MOUSE);
 				if (test.lbutton) {
 					mciSendString(L"open ../背景音乐/装备.mp3 alias BGM", 0, 0, 0);
 					mciSendString(L"setaudio BGM volume to 140", 0, 0, 0);//调节音量大小
@@ -1837,7 +1837,7 @@ void item(int file_num, weapon handbook[]) {
 	//循环区↓
 	while (1) {
 		BeginBatchDraw();
-		peekmessage(&mouse, EM_MOUSE);
+		peekmessage(&mouse, EX_MOUSE);
 
 		if (mouse.lbutton == 1 && (mouse.x > 170 && mouse.x < 255) && (mouse.y > 35 && mouse.y < 70)) {
 
@@ -1885,7 +1885,7 @@ void item(int file_num, weapon handbook[]) {
 			ac = 0;
 		}
 
-		peekmessage(&mouse, EM_MOUSE);//读取鼠标信息，多个该函数可提高灵敏度
+		peekmessage(&mouse, EX_MOUSE);//读取鼠标信息，多个该函数可提高灵敏度
 
 		//战斗界面↓
 		if (judge == 0) {
@@ -2025,10 +2025,10 @@ void item(int file_num, weapon handbook[]) {
 				judge = 1;
 				save(file_num, act, me.I.w1, me.I.w2, handbag, money, level_num, points);//存档函数
 			}
-			peekmessage(&mouse, EM_MOUSE);
+			peekmessage(&mouse, EX_MOUSE);
 		}
 
-		peekmessage(&mouse, EM_MOUSE);
+		peekmessage(&mouse, EX_MOUSE);
 
 		//装备界面↓
 		if (judge == 1) {
@@ -2083,7 +2083,7 @@ void item(int file_num, weapon handbook[]) {
 
 				}
 
-			peekmessage(&mouse, EM_MOUSE);
+			peekmessage(&mouse, EX_MOUSE);
 
 			draw(78, 160, me.I.w1.p);//玩家当前装备贴图
 			draw(355, 160, me.I.w2.p);
@@ -2275,11 +2275,11 @@ void item(int file_num, weapon handbook[]) {
 
 			count++;
 			Sleep(1);
-			peekmessage(&mouse, EM_MOUSE);
+			peekmessage(&mouse, EX_MOUSE);
 
 		}
 
-		peekmessage(&mouse, EM_MOUSE);
+		peekmessage(&mouse, EX_MOUSE);
 
 		//酒馆界面↓
 		if (judge == 2) {
@@ -2887,7 +2887,7 @@ void item(int file_num, weapon handbook[]) {
 
 
 		}
-		peekmessage(&mouse, EM_MOUSE);
+		peekmessage(&mouse, EX_MOUSE);
 
 		//图鉴界面↓
 		if (judge == 3) {
@@ -3163,7 +3163,7 @@ void item(int file_num, weapon handbook[]) {
 		ctot(tstr, str);
 		outtextxy(914, 47, tstr);
 
-		peekmessage(&mouse, EM_MOUSE);
+		peekmessage(&mouse, EX_MOUSE);
 
 		draw(20, 30, &back);//返回菜单按钮↓
 		if (mouse.lbutton && (mouse.x > 20 && mouse.x < 110) && (mouse.y > 30 && mouse.y < 80)) {
